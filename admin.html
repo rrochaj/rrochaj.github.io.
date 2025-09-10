@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Admin - Controle de Selos</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <main class="center">
+    <h1>Painel Admin</h1>
+    <p>Login admin padrão: <strong>admin</strong> / <strong>admin123</strong> (altere depois)</p>
+
+    <div class="card">
+      <form id="adminLoginForm">
+        <label>E-mail</label>
+        <input type="email" id="adminEmail" required>
+        <label>Senha</label>
+        <input type="password" id="adminPass" required>
+        <button class="btn" type="submit">Entrar como admin</button>
+      </form>
+      <p id="adminMsg"></p>
+    </div>
+
+    <section id="adminArea" style="display:none;">
+      <h2>Usuários pendentes</h2>
+      <div id="pendingList"></div>
+
+      <h2>Controle de estoque</h2>
+      <p>Saldo atual: <span id="stockValue">0</span></p>
+      <label>Ajustar saldo (coloque número negativo para reduzir):</label>
+      <input type="number" id="adjustAmount" value="0">
+      <button id="adjustBtn" class="btn">Ajustar estoque</button>
+
+      <h2>Histórico</h2>
+      <div id="history"></div>
+
+      <button id="logoutAdmin" class="btn">Sair (admin)</button>
+    </section>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
