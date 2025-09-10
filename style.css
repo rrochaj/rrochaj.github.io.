@@ -1,52 +1,14 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f4f4f4;
-  color: #333;
-}
+body { font-family: Arial, sans-serif; background:#ffffff; color:#222; margin:0; padding:20px; }
+.center { max-width:720px; margin:0 auto; text-align:center; }
+.card { background:#f7f7f7; padding:15px; border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,0.08); margin-bottom:15px; }
+label { display:block; text-align:left; margin-top:8px; }
+input[type="text"], input[type="email"], input[type="password"], input[type="number"], textarea { width:100%; padding:8px; border:1px solid #ccc; border-radius:4px; box-sizing:border-box; }
+.btn { padding:10px 16px; margin-top:10px; background:#0077cc; color:#fff; border:none; border-radius:6px; cursor:pointer; }
+.btn.green { background:#2e8b57; } /* botão verde */
+.btn:hover { opacity:0.95; }
+.panel-header { display:flex; align-items:center; gap:16px; justify-content:center; }
+.panel-header img { max-width:120px; }
+.actions { display:flex; gap:20px; justify-content:center; margin-top:20px; }
+a { color:#0077cc; text-decoration:none; }
 
-header {
-  background: #333;
-  color: white;
-  padding: 15px;
-  text-align: center;
-}
 
-nav a {
-  color: white;
-  margin: 0 10px;
-  text-decoration: none;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-main {
-  padding: 20px;
-  text-align: center;
-}
-
-button {
-  padding: 10px 20px;
-  background: #0077cc;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #005fa3;
-}
-
-footer {
-  background: #333;
-  color: white;
-  text-align: center;
-  padding: 10px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
