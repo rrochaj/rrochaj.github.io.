@@ -52,7 +52,7 @@
       if(users.find(x=>x.email===email)){ regMsg.textContent = 'E-mail já cadastrado.'; return; }
       users.push({ nome, email, pass, authorized:false, isAdmin:false });
       setUsers(users);
-      regMsg.textContent = 'Cadastro realizado. Aguarde autorização do administrador.';
+      regMsg.textContent = 'Cadastro solicitado. Aguarde autorização do administrador.';
       regForm.reset();
     });
   }
@@ -68,24 +68,62 @@
     const adjustAmount = document.getElementById('adjustAmount');
     const historyDiv = document.getElementById('history');
 
-    function renderPending(){
-      const users = getUsers();
-      pendingList.innerHTML = '';
-      users.filter(u=>!u.authorized).forEach(u=>{
-        const div = document.createElement('div');
-        div.textContent = `${u.nome} — ${u.email} `;
-        const apro = document.createElement('button'); apro.textContent='Autorizar';
-        apro.onclick = ()=>{
-          u.authorized = true; setUsers(users); renderPending(); renderHistory();
-        };
-        const del = document.createElement('button'); del.textContent='Remover';
-        del.onclick = ()=>{
-          const idx = users.indexOf(u); users.splice(idx,1); setUsers(users); renderPending(); renderHistory();
-        };
-        div.appendChild(apro); div.appendChild(del);
-        pendingList.appendChild(div);
-      });
-      if(pendingList.children.length===0) pendingList.textContent='Nenhum usuário pendente.';
+    function function renderPending(){
+  const users = getUsers();
+  pendingList.innerHTML = '';
+
+  // filtra apenas usuários não autorizados
+  const pendentes = users.filter(u => !u.authorized);
+  
+  if(pendentes.length === 0){
+    pendingList.textContent = 'Nenhum usuário pendente.';
+    return;
+  }
+
+  pendentes.forEach(u => {
+    const div = document.createElement('div');
+    div.className = 'card';
+    div.style.marginBottom = '10px';
+    div.style.display = 'flex';
+    div.style.justifyContent = 'space-between';
+    div.style.alignItems = 'center';
+
+    const info = document.createElement('span');
+    info.textContent = `${u.nome} — ${u.email}`;
+
+    // botão autorizar
+    const apro = document.createElement('button');
+    apro.textContent = 'Autorizar';
+    apro.className = 'btn green';
+    apro.style.marginRight = '5px';
+    apro.onclick = () => {
+      u.authorized = true;
+      setUsers(users);
+      renderPending();
+      renderHistory(); // atualiza histórico
+    };
+
+    // botão remover
+    const del = document.createElement('button');
+    del.textContent = 'Remover';
+    del.className = 'btn';
+    del.onclick = () => {
+      const idx = users.indexOf(u);
+      users.splice(idx,1);
+      setUsers(users);
+      renderPending();
+    };
+
+    const btnGroup = document.createElement('div');
+    btnGroup.appendChild(apro);
+    btnGroup.appendChild(del);
+
+    div.appendChild(info);
+    div.appendChild(btnGroup);
+    pendingList.appendChild(div);
+  });
+}
+
     }
 
     function renderHistory(){
@@ -175,4 +213,5 @@
   }
 
 })();
+
 
