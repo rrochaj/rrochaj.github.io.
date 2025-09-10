@@ -1,29 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Meu Site</title>
+  <meta charset="utf-8">
+  <title>Login - Controle de Selos</title>
   <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-  <header>
-    <h1>Bem-vindo ao Controle de Selos do NUPAP</h1>
-    <nav>
-      <a href="index.html">Início</a>
-      <a href="sobre.html">Sobre</a>
-      <a href="contato.html">Contato</a>
-    </nav>
-  </header>
+  <main class="center">
+    <h1>Login</h1>
 
-  <main>
-    <h2>Página inicial</h2>
-    <p>Esse é um site simples hospedado no GitHub Pages.</p>
-    <button onclick="alert('Você clicou no botão!')">Clique aqui</button>
+    <div class="card">
+      <form id="loginForm">
+        <label>E-mail</label>
+        <input type="email" id="loginEmail" required>
+        <label>Senha</label>
+        <input type="password" id="loginPassword" required>
+        <button type="submit" class="btn">Entrar</button>
+      </form>
+      <p id="loginMsg"></p>
+    </div>
+
+    <hr>
+
+    <h2>Cadastro (novo usuário)</h2>
+    <div class="card">
+      <form id="registerForm">
+        <label>Nome de usuário</label>
+        <input type="text" id="regNome" required>
+        <label>E-mail</label>
+        <input type="email" id="regEmail" required>
+        <label>Senha</label>
+        <input type="password" id="regPass" required>
+        <button type="submit" class="btn">Cadastrar (aguardando autorização)</button>
+      </form>
+      <p id="regMsg"></p>
+    </div>
   </main>
 
-  <footer>
-    <p>© 2025 - Meu site no GitHub</p>
-  </footer>
-  <script src="script.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
+
+
