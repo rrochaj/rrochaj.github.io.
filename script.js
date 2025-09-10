@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
         alert('Login simulado realizado com sucesso!');
         // Após a autenticação bem-sucedida, você pode redirecionar o usuário para outra página
         // window.location.href = 'pagina_inicial.html';
-        console.log("Site carregado com sucesso!");
-
+        
     });
 
 });
+
