@@ -68,7 +68,7 @@
     const adjustAmount = document.getElementById('adjustAmount');
     const historyDiv = document.getElementById('history');
 
-    function function renderPending(){
+    function renderPending(){
   const users = getUsers();
   pendingList.innerHTML = '';
 
@@ -213,5 +213,6 @@
   }
 
 })();
+
 
 
