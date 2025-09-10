@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Saída - Controle de Selos</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <main class="center">
+    <h1>Cadastrar Saída</h1>
+    <div class="card">
+      <form id="saidaForm">
+        <label>Quantidade</label>
+        <input type="number" id="saidaQtd" min="1" required>
+        <label>Unidade/Responsável</label>
+        <input type="text" id="saidaPara" required>
+        <label>Observação</label>
+        <input type="text" id="saidaObs">
+        <button type="submit" class="btn green">Registrar Saída</button>
+      </form>
+      <p id="saidaMsg"></p>
+    </div>
+
+    <p><a href="app.html">Voltar</a></p>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
+
+

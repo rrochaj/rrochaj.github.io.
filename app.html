@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Painel - Controle de Selos</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <main class="center">
+    <header class="panel-header">
+      <img id="logoImg" src="logo.png" alt="Logo" onerror="this.style.display='none'">
+      <div>
+        <h2 style="color:black;" id="greeting">Olá, Usuário</h2>
+        <p>Saldo atual: <strong id="currentStock">0</strong> selos</p>
+      </div>
+    </header>
+
+    <div class="actions">
+      <button onclick="location.href='entrada.html'" class="btn green">Cadastrar Entrada</button>
+      <button onclick="location.href='saida.html'" class="btn green">Cadastrar Saída</button>
+    </div>
+
+    <div style="margin-top:20px;">
+      <button id="logout" class="btn">Sair</button>
+    </div>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Entrada - Controle de Selos</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <main class="center">
+    <h1>Cadastrar Entrada</h1>
+    <div class="card">
+      <form id="entradaForm">
+        <label>Quantidade</label>
+        <input type="number" id="entradaQtd" min="1" required>
+        <label>Origem (ex: compra, doação)</label>
+        <input type="text" id="entradaOrigem" required>
+        <label>Observação</label>
+        <input type="text" id="entradaObs">
+        <button type="submit" class="btn green">Registrar Entrada</button>
+      </form>
+      <p id="entradaMsg"></p>
+    </div>
+
+    <p><a href="app.html">Voltar</a></p>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
+
